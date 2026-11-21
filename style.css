@@ -1,0 +1,1020 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+.display{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 50%;
+    background-color: blue;
+    animation-name: displayNone;
+    animation-timing-function: forwards;
+    animation-duration: 0.20s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 5;
+    animation-timeline: view();
+    
+}
+
+@keyframes displayNone {
+    from{
+        background-color: blue;
+    }
+    to{
+        background-color: red;
+    }
+} */
+
+html{
+    scroll-behavior: smooth;
+}
+img{
+    display: block;
+    height: auto;
+}
+
+:root{
+    --bg: #0f172a;
+    --primaryColor: #64748e;
+    --secondaryColor: #22d3ee;
+    --thirdColor:  #C6C5BE;
+   --: #5E758E;
+    --white: #F4F2E4;
+    --padding: 1rem;
+    --margin: 1rem;
+    --boxShadow: 0px 0px 1px rgba(255, 255, 255, 0.950);
+}
+
+li, a{
+    list-style: none;
+    text-decoration: none;
+}
+
+/* THIS IS SECTIONS HEADING  */
+.sectionsHeadContainer{
+    margin: 1rem 0 1rem 0;
+}
+
+/* General Header Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* FONT WILL RETRIEVE FROM GOOGLE FONTS*/
+body{
+    color: var(--primaryColor);
+    
+    font-family: "Times New Romans", "serif";
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.headAndHero{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+    position: relative;
+    top: 0;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+    
+}
+
+.headAndHero::after{
+    content: " ";
+    background-image: url(/IMG-20250202-WA0003.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+   
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    transition: 0.5s background-image ease-in-out;
+    background-image: linear-gradient(var(--bg), transparent);
+
+    z-index: 100;
+}
+
+header h1 {
+    font-size:clamp(1.1rem, 100vh, 1.3rem);
+    cursor: pointer;
+    transition: 0.3s color;
+    padding: 0.5rem;
+    color: var(--white);
+    text-shadow: 0px 0px 5px black;
+   
+}
+
+header h1:hover{
+    color: red;
+    transition: 0.3s color;
+}
+
+header .navbarContainer{
+   width: 40px;
+   height: 40px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0.5rem;
+   cursor: pointer;
+}
+
+header .navbarContainer .bar{
+   width: 30px;
+   height: 3px;
+   background-color: red;
+   margin: 2px;
+   display: flex;
+   border-radius: 4px;
+}
+
+/* Hamburger Animation when Active */
+.navbarContainer.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.navbarContainer.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.navbarContainer.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+header .navMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #0f172a;
+    border-bottom: 10px solid red;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out;
+    z-index: 1000;
+
+}
+
+.navMenu.active {
+    max-height: 300px;
+}
+
+header .navMenu .navList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+
+}
+
+header .navMenu .navList li{
+    transition: 0.3s background-color;
+    padding: 0.5rem;
+    color: var(--white);
+    font-size:clamp(1.1rem, 100vh, 1.3rem);
+    border-radius: 4px;
+}
+
+header nav .navList li a,
+header a{
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--white);
+    text-shadow: 0px 0px 5px black;
+}
+
+header nav .navList li a:hover{
+    background-color: var(--primaryColor);
+    transition: 0.3s background-color;
+}
+
+
+
+/* THIS IS FOR LANDING HERO SECTION */
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+
+    
+}
+
+.landingContainer{
+    position: absolute;
+    top: 70%;
+    left: 0px;
+    width: 80%;
+    border-radius: 4px;
+    margin: 0.5rem;
+
+    padding: 0.5rem;
+    background-color: var(--white);
+
+    animation-name: borderBox;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-fill-mode: box;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes borderBox {
+    0%{
+    }
+
+    20%, 80%{
+
+    }
+
+    40%, 60%{
+
+    }
+
+    100%{
+
+    }
+
+}
+
+.landingContainer p{
+    line-height: 25px;
+}
+
+
+/* MY SERVICE SECTION */
+.serviceContainer{
+    background-image: linear-gradient(var(--bg), black, var(--bg));
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    
+}
+.serviceElementContainer{
+    margin: auto;
+}
+
+.serviceElementContainer .serviceElement{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.serviceContainer::after{
+    content: "";
+    background-image: url(gradient\ Color\ pattern\ background.jpg);
+
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+
+   
+    opacity: 0.55;
+
+    z-index: -1;
+}
+
+.serviceContainer .sContainerInner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    z-index: 100;
+}
+
+.sContainerInner .sectionsHeadContainer{
+    color: var(--white);
+
+}
+
+.serviceElementItem{
+   
+    box-shadow: var(--boxShadow);
+    padding: 1rem;
+    border-radius: 8px;
+    width: clamp(280px, 100vh, 95%);
+
+    margin: auto;
+    transform: translateX(-110%);
+    
+    animation-name: showUp;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-delay: 1.2s;
+
+    animation-timeline: view();
+    animation-range:  0% 40%;
+    
+    
+}
+
+@keyframes showUp {
+    from{
+        
+        transform: translateX(-120%);
+       
+    }
+
+    to{
+        transform: translateX(0%);
+       
+    }
+}
+
+.sEIContent i{
+
+    font-size: 2rem;
+
+    transform: translateX(0%);
+
+    animation-name: IconAnimation;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-delay: 5s;
+
+    animation-timeline: view();
+    animation-range: entry 0% cover 70%;
+}
+
+@keyframes IconAnimation {
+    from{
+        
+        transform: translateX(-100%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.serviceElementItem p{
+    
+    transform: translateX(0%);
+
+    animation-name: pAnimation;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-delay: 10s;
+
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes pAnimation {
+    from{
+        transform: translateX(-100%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+
+
+.serviceContainer .serviceElement .serviceElementItem p{
+    line-height: 20px;
+    margin-top: 1rem;
+}
+
+.sEIContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sEIContent h3{
+    color: var(--thirdColor);
+}
+
+/* THIS HANDLE THE SKILL RATE SECTION */
+.skillContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    padding: 0.5rem;
+    
+}
+
+.skillRateContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.skillRateContainer .skillElement{
+   
+}
+
+.skillRateContainer .skillElementItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    
+}
+
+.skillRateContainer .skillElementItem i{
+    font-size: 0.8rem;
+    color: red;
+}
+
+/* THIS SECTION HANDLE THE STYLING OF TESTIMONIAL  */
+.testimonials{
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    
+}
+
+.testimonialContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonialElement{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.testimonialElement .testimonialElementItem{
+    background-color: #0f172a;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2rem;
+    border-bottom: 5px solid red;
+    border-radius: 4px;
+
+
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    transform: translateX(0%);
+    
+
+    animation-name: textAppear;
+    animation-timing-function: 1;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-delay: 1.2s;
+
+    animation-timeline: view();
+    animation-range: entry 30% cover 50%;
+}
+
+
+@keyframes textAppear {
+    from{
+        
+        transform: translateX(-1%);
+    }
+    50%{
+        transform: translateX(5%);
+    }
+    90%{
+        transform: translateX(-1%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.testimonialProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -55px;
+
+
+    animation-name: textAppear;
+    animation-timing-function: 1;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-delay: 1.2s;
+
+    animation-timeline: view();
+    animation-range: entry 30% cover 50%;
+}
+
+.testimonialProfile figure{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 10px;
+    
+}
+
+.testimonialProfile figure img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    transform: scale(1);
+    transition: 0.3s ease-in-out transform;
+    z-index: 1;
+}
+
+.testimonialProfile figure img:hover{
+    transform: scale(1.2);
+    transition: 0.3s ease-in-out transform;
+   
+}
+
+.testimonialProfile p {
+    color: var(--thirdColor);
+    
+   
+}
+
+
+/* THIS IS ABOUT ME SECTION */
+.aboutMe{
+    text-align: center;
+    background-color: var(--white);
+}
+
+.aboutMe .aboutContainer{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutMe .sectionsHeadContainer{
+    padding-top: 2rem;
+    margin-top: 1rem;
+}
+
+.aboutMe .sectionsHeadContainer h1{
+    color: var(--bg);
+}
+
+
+
+
+.aboutMe .aboutContainer figure{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid var(--bg);
+}
+
+.aboutMe .aboutContainer figure img{
+    width: 250px;
+    height: 250px;
+    transform: scale(1);
+    transition: 0.5s ease transform;
+}
+
+.aboutMe .aboutContainer figure img:hover{
+    border-radius: 50%;
+    transform: scale(1.2);
+    transition: 0.5s ease transform;
+
+}
+
+.aboutContainer .aboutContainerDescription p{
+    
+    transform: translateX(0%);
+
+    animation-name: pAnimation;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-duration: 15s;
+    animation-delay: 10s;
+
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes pAnimation {
+    from{
+        
+        transform: translateX(-100%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.aboutMe .aboutContainer .aboutContainerDescription div a{
+    color: var(--bg);
+    transition: 0.3s ease background-color, 0.3s ease transform;
+    transform: scale(1);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    border: 1px solid var(--bg);
+    padding: 1rem;
+    
+}
+
+.aboutMe .aboutContainer .aboutContainerDescription a:hover{
+    transition: 0.5s ease background-color, 0.5s ease-in-out border;
+    border: 1px solid transparent;
+    background-color: var(--bg);
+    color: var(--white);
+}
+
+/* THIS IS FOR GET INTO TOUCH AND FOOTER SECTION */
+.getInTouchAndFooter{
+    background-image: linear-gradient(var(--bg), black, var(--bg));
+
+}
+
+.getInTouch{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.getInTouch .sectionsHeadContainer{
+   color: var(--white);
+
+}
+
+.getInTouchContainer form{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: .2rem;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+}
+
+.getInTouchContainer form input, 
+.getInTouchContainer form textarea{
+    width: clamp(280px, 100vh, 100%);
+    padding: 1rem;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    border-radius: 4px;
+    font-weight: 900;
+    box-shadow: var(--boxShadow);
+    transition: 0.3s ease-in-out background-color;
+    
+}
+
+.getInTouchContainer form textarea{
+    height: 200px;
+    font-weight: 900;
+    resize: none;
+}
+
+.getInTouchContainer form input:focus, 
+.getInTouchContainer form textarea:focus{
+    background-color: var(--white);
+    color: var(--bg);
+    transition: 0.3s ease-in background-color;
+}
+
+.getInTouchContainer form button{
+    padding: 1rem;
+    font-weight: 600;
+    font-size: clamp(1.1rem, 100vh, 1.2rem);
+    text-align: le;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    margin-bottom: var(--margin);
+    cursor: pointer;
+    transition: 0.3s ease-in-out border;
+    text-align: center;
+    transition: 0.3s ease-in-out border, 0.5s ease background-color;
+
+}
+
+.getInTouchContainer form button:hover{
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    transition: 0.3s ease-in-out border, 0.5s ease background-color;
+
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.footer .sectionsHeadContainer h1{
+    color: var(--white);
+}
+
+.creatorContainer{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    padding: 1rem;
+}
+
+.creatorContainer div a{
+   color: var(--white);
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.socials i{
+    width: 36px;
+    height: 36px;
+    transform: scale(1);
+    transition: 0.3s ease transform, 0.5s ease-in-out color, 0.3s ease border;
+    color: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+    padding: 0.5rem;
+    border-radius: 50%;
+    text-align: center;
+    place-content: center;
+    cursor: pointer;
+}
+
+.socials i:hover{
+    transform: scale(1.2);
+    transition: 0.3s ease transform, 0.5s ease-in-out color, 0.3s ease border;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.footerRight{
+    text-align: center;
+}
+
+.footerRight p{
+    margin-top: 0.3rem;
+}
+
+@media screen and (min-width: 300px) {
+    
+}
+
+@media screen and (min-width: 576px) {
+    
+}
+
+@media all and (min-width: 768px) {
+
+    /* MY SERVICE INNER  */
+    .landingContainer{
+        width: clamp(280px, 100vh, 60%);
+      
+    }
+
+    /* MY SERVICE INNER  */
+    .serviceElementItem{
+        box-shadow: var(--boxShadow);
+        padding: 1rem;
+        border-radius: 8px;
+        width: clamp(280px, 100vh, 70%);
+        margin: auto;
+    }
+
+    /* MY TESTIMONIAL INNER  */
+    .testimonialElementItem{
+        width: clamp(280px, 100vh, 70%);
+        margin: auto;
+    }
+        
+    /* MY ABOUT SECTIIN  */
+    .aboutMe .aboutContainer figure{
+        width: 150px;
+        height: 150px;
+    }
+
+    .aboutMe .aboutContainer figure img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .aboutMe .aboutContainer figure img:hover{
+        border-radius: 50%;
+        transform: scale(1.2);
+        transition: 0.5s ease transform;
+        
+    }
+    /* MY TESTIMONIAL INNER  */
+    .testimonialElementItem{
+        width: clamp(280px, 100vh, 70%);
+        margin: auto;
+    }
+
+    /* MY GET IN TOUCH INNER  */
+    .getInTouch .getInTouchContainer{
+        width: clamp(280px, 100vh, 80%);
+        margin: auto;
+    }
+
+    .getInTouch form{
+        width: clamp(280px, 100vh, 100%);
+        margin: auto;
+    }
+
+    .getInTouch form input, 
+    .getInTouch form textarea{
+        width: clamp(280px, 100vh, 100%);
+        margin: auto;
+    }
+ 
+    /* MY ABOUT INNER CONTAINER FOR DESCRIPTION */
+    .aboutContainerDescription{
+        width: clamp(280px, 100vh, 70%);
+        margin: auto;
+    }
+
+}
+
+@media screen and (min-width: clamp(992px, 100vh, 1200px)) {
+    /* PARAGRAPH ANIMATION SECTION  */
+    @keyframes pAnimation {
+        from{
+            
+            transform: translateX(-200%);
+        }
+
+        to{
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes showUp {
+    from{
+        filter: blur();
+        transform: translateX(-200%);
+       
+    }
+
+    to{
+        transform: translateX(0%);
+        
+    }
+}
+
+    /* MY SERVICE INNER  */
+    .landingContainer{
+        width: clamp(280px, 100vh, 40%);
+      
+    }
+
+    /* MY SERVICE INNER  */
+    /* .serviceElementContainer{
+        display: flex;
+        width: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    /* MY SERVICE INNER  */
+    .serviceElementContainer .serviceElement{
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: start;
+        box-shadow: var(--boxShadow);
+        border-radius: 14px;
+        padding: 1rem;
+        width: 72%;
+        min-width: 750px;
+        margin: auto;
+    }
+
+    /* MY SERVICE INNER  */
+    .serviceElementItem{
+        width:50%;
+        max-width: 460px;
+        height: 130px;
+        margin: 1px;
+        padding: 0.5rem;
+        transform: translateX(-210%);
+
+    }
+
+    /* MY TESTIMONIAL INNER  */
+    .testimonialElementItem{
+        width: clamp(280px, 100vh, 70%);
+        margin: auto;
+    }
+        
+    /* MY ABOUT SECTIIN  */
+    .aboutMe .aboutContainer figure{
+        width: 150px;
+        height: 150px;
+    }
+
+    .aboutMe .aboutContainer figure img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .aboutMe .aboutContainer figure img:hover{
+        border-radius: 50%;
+        transform: scale(1.2);
+        transition: 0.5s ease transform;
+        
+    }
+
+    /* MY GET IN TOUCH INNER  */
+    .getInTouch .getInTouchContainer{
+        width: clamp(280px, 100vh, 80%);
+        margin: auto;
+    }
+
+    .getInTouch form{
+        width: clamp(280px, 100vh, 100%);
+        margin: auto;
+    }
+
+    .getInTouch form input, 
+    .getInTouch form textarea{
+        width: clamp(280px, 100vh, 100%);
+        margin: auto;
+    }
+ 
+    /* MY ABOUT INNER CONTAINER FOR DESCRIPTION */
+    .aboutContainerDescription{
+        width: clamp(280px, 100vh, 70%);
+        margin: auto;
+    }
+
+}
